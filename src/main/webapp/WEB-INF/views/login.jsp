@@ -46,7 +46,8 @@ href="css/login.css"/>
 					</div>
 					<div class="btnArea_right">
 						<span class="btn b_login">
-						 <a href="javascript:exe()" id="login_btn">로그인</a>
+						<%-- <a href="javascript:exe()" id="login_btn">로그인</a> --%>
+						<a id="login_btn">로그인</a>
 						</span>
 					</div>
 					<div class="fclear"></div>
@@ -138,18 +139,51 @@ href="css/login.css"/>
 		}
 		document.forms[0].submit();
 	}
-	*/
+*/
 	$(function(){
+		//아이디가 login_btn인 요소에 클릭 이벤트 등록
 		$("#login_btn").bind("click", function(){
 			
+			//현재 문서에서 아이디가 s_id와 s_pw인 요소의 값을 얻어낸다.
+			var id = $("#s_id").val();
+			var pw = $("#s_pw").val();
+			
+			if(id.trim().length < 1){
+				//하나도 입력하지 않은 경우! 또는 공백만 입력한 경우
+				alert("아이디를 입력하세요")
+				$("#s_id").val("");//s_id 내용 초기화(청소)
+				$("#s_id").focus();
+				return;
+			}
+			
+			if(pw.trim().length < 1){
+				//하나도 입력하지 않은 경우! 또는 공백만 입력한 경우
+				alert("비밀번호를 입력하세요")
+				$("#s_pw").val("");
+				$("#s_pw").focus();
+				return;
+			}
+			
+			//console.log(id+"/"+pw);
+			
+			//비동기식 통신 수행!!!!!!!!!!!!!!!!!!
 			$.ajax({
-				url: "index",
+				url: "login",
 				type: "post",
+				data: "m_id="+encodeURIComponent(id)+"&m_pw="+encodeURIComponent(pw),
 				dataType: "json"
 			}).done(function(data){
-				
+				//요청에 성공했을 때만 수행
+				//alert(data.res); //data.res의 값이 1이면 정상 로그인이 된 경우!
+									//0이면 아이디 및 비밀번호가 틀린 경우!
+				if(data.res == "1"){
+					alert(data.mvo.m_name+"님 환영합니다. : "+data.res);
+					location.href="/";
+				} else if(data.res == "0") {
+					alert("아이디 또는 비밀번호가 다릅니다.");
+				}
 			}).fail(function(){
-				alert("가입된 회원이 없습니다.");
+				
 			});
 		});
 	});

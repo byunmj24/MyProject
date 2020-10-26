@@ -8,4 +8,9 @@
 		SELECT * FROM member_t
 	</select>
 	
+	<!-- login하는 select -->
+	<select id="login" resultType="mybatis.vo.MemVO" parameterType="java.util.Map">
+		select * from member_t where m_id = #{m_id} and m_pw = #{m_pw}
+	</select>
+	
 </mapper>

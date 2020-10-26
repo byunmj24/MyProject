@@ -21,10 +21,11 @@
 				boolean chk = (boolean)obj;
 				if(!chk){
 			--%>
-			<c:if test="${!login_chk }">
+			<c:if test="${sessionScope.mvo eq null }">
 				<span><a href="login">로그인</a></span>
 			</c:if>
-			<c:if test="${login_chk }">
+			<c:if test="${sessionScope.mvo ne null }">
+				<%--<span><a href="javascript:location.href='logout'">로그아웃</a></span> --%>
 				<span><a href="javascript:logout()">로그아웃</a></span>
 			</c:if>
 			</div>
@@ -173,8 +174,9 @@
 	<form action="Controller" method="post" name="frm">
 		<input type="hidden" name="type"/>
 	</form>
-	
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script>
+	/*
 		function logout(){
 			//현재 문서에서 이름이 frm인 폼을 알아내어 그 안에 있는 요소들 중 
 			//이름이 type인 요소의 값(value)을 "logout"으로 지정한다.
@@ -182,6 +184,19 @@
 			
 			document.frm.submit();
 		}
+	*/
+	function logout(){
+	
+		$.ajax({
+			url: "logout",
+			dataType: "json"
+		}).done(function(data){
+			if(data.res == "0"){
+				alert("정상적으로 로그아웃 되었습니다.");
+				location.href="/";
+			}
+		});
+	}
 	</script>
 </body>
 </html>

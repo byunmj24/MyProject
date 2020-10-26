@@ -18,7 +18,7 @@ public class IndexController {
 	public String index() {
 		return "index";// views/index.jsp를 의미
 	}
-	
+	/*
 	@RequestMapping("/login")
 	public String login() {
 		return "login";
@@ -35,4 +35,5 @@ public class IndexController {
 		
 		return mv;
 	}
+	*/
 }
