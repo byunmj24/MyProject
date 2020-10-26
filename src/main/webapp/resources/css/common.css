@@ -1,0 +1,173 @@
+@charset "UTF-8";
+@import "reset.css";
+
+/*******************
+기본 레이아웃
+*******************/
+#wrap{
+	width:100%;
+	height:100%;
+	margin:auto;
+}
+
+/***** 상단 영역 *****/
+#header{
+	position:relative;
+	width:970px;
+	height:109px;
+	margin:auto;
+}
+/* header 안에 있는 h1태그의 문자열을 없애고, 배경이미지로
+	logo.png로 설정한다. */
+#header>h1{
+	width:181px;
+	height:59px;
+	text-indent:-9999px;
+	background: url("../img/logo.png") no-repeat;
+	/* 현 css문서는 html/main.html에 적용된다. 이때 이미지의 경로는
+		바로 main.html문서를 기준으로 상대경로를 지정한다. 
+		../ > 현재 폴더에서 상위 폴더로 이동 */
+}
+/***** 메뉴 작업 *****/
+/*
+	클래스가 gnb의 위치는 절대적 위치로 지정하고, 너비는 100%, 높이는 50px로 지정
+	각 li의 너비는 194px로 지정한다. 그리고 float개념으로 수평메뉴를 지정하자!
+	배경색은 #ff5001 마우스를 올렸을 때의 배경색은 #e24c09
+*/
+#header ul.gnb{
+	width:100%;
+	height:50px;
+	position:absolute;
+/* 	border:1px solid red; */
+	overflow:hidden;
+}
+/* li태그의 백그라운드 색 설정 */
+ul.gnb li{
+	float:left;
+	width:194px;
+ 	height:100%;
+	background-color:#ff5001;
+/*  border:1px solid red; */
+}
+ul.gnb li.end{
+	clear:both;
+	width:0;
+	height:0;
+}
+ul.gnb li:hover{
+	background-color:#e24c09;
+}
+/* a태그의 사이즈를 li만큼 키워서 클릭범위 맞춰주기 */
+#header .gnb li a{
+	display:block;
+	height:100%;
+	width:auto;
+	text-align:center;
+	line-height:50px;
+}
+/* 폰트는 span태그 안, 아이콘은 span의 백그라운드로 */
+#header .gnb li a span.menu{
+	display:inline-block;
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+	background:url("../img/gnb_bult.png") no-repeat;
+	text-indent:30px;
+/*  padding-left:30px; 도 가능하다. */
+}
+/*각 span 백그라운드 이동 */
+#header .gnb li a span.m02{
+	background-position: 0 -22px;
+}
+#header .gnb li a span.m03{
+	background-position: 0 -44px;
+}
+#header .gnb li a span.m04{
+	background-position: 0 -66px;
+}
+#header .gnb li a span.m05{
+	background-position: 0 -88px;
+}
+/******************************
+	바닥글(footer) 스타일
+******************************/
+#footer{
+	width:auto;
+	background:#eee;
+	margin-top:100px;
+}
+#footer .footer_area{
+	width:900px;
+	margin:auto;
+	padding:20px 0;
+}
+#footer .foot_guide{
+	overflow:hidden;
+	padding-bottom:20px;
+}
+#footer .foot_guide li{
+	float:left;
+	padding:0 10px;
+	border-left:1px solid black;
+}
+#footer .foot_guide li:first-child{
+	border:none;
+	padding-left:0;
+}
+#footer .foot_guide li a{
+	color:#777;
+	font-size:12px;
+	font-weight:bold;
+}
+#footer .foot_guide li a:hover{
+	color:#999;
+}
+#footer address{
+	font-size:12px;
+	color:#777;
+	padding-bottom:6px;
+}
+#footer .copyright{
+	font-size:11px;
+	color:#777;
+ 	padding-bottom:6px;
+}
+
+/******************************
+	기타 스타일
+******************************/
+.ellip{	/* 문자열을 공간에 맞도록 표현 및 줄임표 표현 */
+	display:inline-block;
+	width:100%;
+	overflow:hidden;
+	text-overflow:ellipsis;
+ 	white-space:nowrap;
+}
+.fclear{
+	float:none;
+	clear:both;
+	display:block;
+	height:0 !important; /* !important는 css를 적용하다보면 
+							다른 css파일에서 중복 적용되는 부분이 더러 생긴다.
+							그래서 우선시 하겠다는 의미이다. */
+}
+/* .fr{ float:right !important; } */
+
+/******************************
+	버튼 스타일
+******************************/
+.btn{
+	display:inline-block;
+	background:url(../img/btn.png) no-repeat;
+	text-indent:-9999px;
+}
+.btn a{
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+/******************************
+	텍스트 정렬 스타일
+******************************/
+.txt_right{text-align: right;}

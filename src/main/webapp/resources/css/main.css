@@ -1,0 +1,192 @@
+@charset "UTF-8";
+#contents{
+	width:970px;	
+	height:auto;
+	margin:auto;
+}
+#contents .main_img{
+	width:100%;
+	height:360px;
+/* 	border:1px solid black; */
+}
+#contents .main_img img{
+	width:100%;
+	height:100%;
+/* 	border:1px solid black; */
+}
+/* 메인 이미지 밑에 있는 뉴스들 */
+#contents .main_news{
+	width:auto;
+	height:240px;
+	background:url(../img/gra_bg.png) repeat-x;
+	padding:40px 50px;
+/* 	border:1px solid black; */
+}
+#contents .news_type01{ /* 아이디가 contens인 요소의 자손들 중 클래스가 news_type01인 요소들 */
+	width:245px;
+	overflow:hidden;
+	float:left;
+}
+#contents .news_type01.cen{ /* 아이디가 contens인 요소의 자손들 중 클래스가 news_type01인 요소들 
+								중에서 cen이라는 클래스도 같이 가지고 있는 요소들을 선택한다. */
+	margin:0 65px;
+}
+
+#contents .title{
+	height:20px;
+	background:url(../img/main_title.png) no-repeat;
+	text-indent:-9999px;
+	margin-bottom:5px;
+}
+/* nth-child(a) : a번째 자식 */
+#contents .main_news .news_type01:nth-child(1) .title{
+	/* news_type01이 총 3개가 있다. 이 중에 첫번째를 의미하고, 그 안에
+		있는 자손 요소들 중 클래스가 title인 요소에 적용한다. */
+	background-position:0 0;
+}
+#contents .main_news .news_type01:nth-child(2) .title{
+	background-position:0 -20px;
+}
+#contents .main_news .news_type01:nth-child(3) .title{
+	background-position:0 -40px;
+}
+/*
+#contents .news_type01.fl>p{
+	background-position:0 0;
+}
+#contents .news_type01.cen>p{
+	background-position:0 -20px;
+}
+#contents .news_type01.fr>p{
+	background-position:0 -40px;
+}
+*/
+#contents .main_news .news_type01 .news_src{
+	display:block;
+	overflow:hidden;
+	
+}
+#contents .main_news .news_type01 .thum_img{
+	position:relative;
+	display:inline-block;
+	overflow:hidden;
+	width:245px;
+	height:148px;
+}
+#contents .main_news .news_type01 .thum_img img{
+	width:100%;
+	height:100%;
+}
+/*안됨*/
+#contents .main_news .news_type01 .thum_img .btn_play{
+	display:inline-block;
+	width:52px;
+	height:52px;
+	position:absolute;
+	top:50px;
+	left:96px;
+	background:url(../img/icon_play.png) no-repeat;
+}
+.main_news .news_type01 .subject{
+	height:35px;
+	font-weight:bold;
+	line-height:35px;
+}
+.main_news .news_type01 .subject:hover{
+	color:#ff5001;
+}
+.main_news .news_type01 .writer{
+	float:left;
+}
+.main_news .news_type01 .more_view{
+	float:right;
+}
+/********************************************/
+.main_board{
+	width:auto;
+	padding:50px 35px;
+}
+.main_board .board_type01{
+	position:relative;
+	width:250px;
+	overflow:hidden;
+	float:left;
+}
+#contents .main_board .board_type01 .title{
+	border-bottom:1px solid #efefef;
+	margin-bottom:7px;
+}
+#contents .main_board .board_type01:nth-child(1) .title{
+	background-position:0 -60px;
+}
+#contents .main_board .board_type01:nth-child(2) .title{
+	background-position:0 -80px;
+}
+#contents .main_board .board_type01 .more_view{
+	position:absolute;
+	right:3px;
+	top:3px;
+}
+
+.main_board .board_type01 .notice li{
+	position:relative;
+	height:23px;
+	line-height:23px;
+}
+.main_board .board_type01 .notice li a{
+	display:inline-block;
+	width:200px;
+	overflow:hidden;
+}
+.main_board .board_type01 .notice li .date{
+	position:absolute;
+	top:4px;
+	right:3px;
+	font-size:11px;
+}
+.main_board .board_type01 .article{
+	display:block;
+	overflow:hidden;
+}
+.main_board .board_type01 .article .thum_img{
+	float:left;
+	display:inline-block;
+	width:67px;
+	height:67px;
+	margin:7px;
+}
+.main_board .board_type01.cen{
+	margin:0 50px;
+}
+.main_board .board_type01 .article .src{
+	float:right;
+	width:165px;
+	padding-top:7px;
+	line-height:18px;
+}
+/***** 배너 *****/
+.main_board .board_type01 .banner{
+	display:inline-block;
+	width:137px;
+	height:118px;
+	border:1px solid #dedede;
+	text-indent:-9999px;
+	background:url(../img/main_banner.png) no-repeat;
+}
+.main_board .board_type01.fr{
+	width:282px;
+/*  	border:1px solid red; */
+}
+/*
+.main_board .board_type01 .banner.b02{
+	background-position:-137px 0px;
+}
+*/
+.main_board .board_type01 .banner:nth-child(2){
+	background-position:-137px 0px;
+}
+.main_board .board_type01 .banner>a{
+	display:block;
+	width:100%;
+	height:100%;
+}

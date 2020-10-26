@@ -1,0 +1,127 @@
+@charset "UTF-8";
+#contents_sub{
+	width:900px;
+	height:auto;
+	margin:auto;
+	padding-top:30px;
+/*   	border:1px solid red;  */
+}
+
+.login_area{
+	width:750px;
+	height:205px;
+	background:url(../img/login_bg.png) no-repeat;
+	margin:80px auto;
+	padding:35px 70px;
+	text-align:center;
+	position:relative;
+/*    	border:1px solid red;   */
+}
+.person_login{
+	float:left;
+	width:auto;
+	height:auto;
+	/*
+	position:absolute;
+	top:20px;
+	left:80px;*/
+/*  	border:1px solid red;  */
+}
+.group_login{
+	float:right;
+	width:auto;
+	height:auto;
+	/*
+	position:absolute;
+	top:20px;
+	left:520px;
+	*/
+/*   	border:1px solid red; */
+}
+
+.sub_title{
+	background:url(../img/sub_title.png) no-repeat;
+ 	text-indent:-9999px;
+	height:50px;
+	
+/*   	border:1px solid red;   */
+}
+.sub_title.tit02{
+	height:30px;
+	width:140px;
+	background-position:0 -50px;
+}
+.login_area .sub_title.title01{
+	background-position:0 -80px;
+	height:75px;
+	width:300px;
+}
+.login_area .sub_title.title02{
+	background-position:0 -161px;
+	height:75px;
+	width:300px;
+}
+.input_area{
+	float:left;
+	width:200px;
+	height:55px;
+ 	position:relative; 
+/* 	border:1px solid red; */
+}
+.btnArea_right{
+	float:right;
+	top:5px;
+	width:85px;
+	height:55px;
+	background:url(../img/btn.png) no-repeat;
+	text-indent:-9999px;
+	margin-right:10px;
+/*  	border:1px solid red;  */
+}
+.btnArea_right a{
+	display:block;
+	width:100%;
+	height:100%;
+}
+.input_area input{
+	float:right;
+ 	position:relative; 
+	right:5px;
+	top:-40px;
+	width:100px;
+	height:18px;
+	margin:5px;
+/* 	border:1px solid red; */
+}
+.input_area label{
+	display:block;
+	width:80px;
+	text-indent:11px;
+	background:url(../img/bult.png) no-repeat;
+	background-position:0 -76px;
+ 	margin-top:6px; 
+ 	font-size:15px;
+ 	margin-bottom:15px;
+/*   	border:1px solid red;  */
+ }
+.login_search{
+	padding-top:10px;
+/* 	border:1px solid red; */
+}
+
+.login_search .btn.b_search{
+	display:inline-block;
+	width:160px;
+	height:28px;
+	background:url(../img/btn.png) no-repeat;
+	background-position:-100px 0;
+	text-indent:-9999px;
+	margin-left:48px;
+/*  	border:1px solid red; */
+}
+.login_search .btn.b_search a{
+	display:block;
+	width:100%;
+	height:100%;
+}
+

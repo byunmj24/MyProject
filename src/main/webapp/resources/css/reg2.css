@@ -1,0 +1,119 @@
+@charset "UTF-8";
+#contents_sub{
+	width:900px;
+	height:auto;
+	margin:auto;
+	padding-top:30px;
+}
+.sub_title{
+	background:url(../img/sub_title.png) no-repeat;
+	text-indent:-9999px
+}
+.title01{
+	height:30px;
+}
+p.title_src{
+	font-size:15px;
+	font-weight:bold;
+	color:#222;
+	padding:10px 0 40px 5px;
+}
+.guide_txt{
+	font-size:11px;
+	color:#999;
+	padding-bottom:7px;
+}
+.reg{
+	display:inline-block;
+	width:12px;
+	height:8px;
+/* 	text-indent:-9999px; */
+	background:url(../img/bult.png) no-repeat;
+}
+.fr{ float:right !important; }
+
+/***** 테이블 작업 *****/
+.table_type01{
+	border-collapse:collapse;
+	border:1px solid #ddd;
+	border-left: none;
+	border-right: none;
+}
+.table_type01 th{
+	border:1px solid #ddd;
+	border-left:none;
+	background-color:#efefef;
+	font-weight:bold;
+	padding:10px 0 10px 10px;
+}
+.table_type01 td{
+	border:1px solid #ddd;
+	border-right:none;
+	padding:10px;
+}
+label.hidden{
+ 	display:inline-block;
+ 	width:0;
+ 	height:0; 
+ 	font-size:0; 
+ 	line-height:0; 
+ 	text-indent:-9999px;
+}
+
+/***** 버튼 *****/
+.b_bdcheck{
+	width:60px;
+	height:25px;
+	background-position:0 -150px;
+	position:absolute;
+	margin-left:5px;
+}
+/* input 태그들 중 type이 text인 것만 적용 */
+tbody td input[type=text], input[type=password]{
+	width:110px;
+	border:1px solid #ccc;
+	height:14px;
+	padding:5px;
+	border-radius:3px;/* 모서리 깍기(라운드 처리) */
+}
+tbody td select{
+	width:120px; /* 원하는 너비 설정 */
+/* 	padding:.4em .2em; 여백으로 높이 설정 */
+	padding:0;
+	height:26px;
+	border:1px solid #ccc;
+	border-radius:3px;
+/* 	appearance:none; 아래화살표 없애기 */
+	position:absolute;
+	margin-left:5px;
+}
+.btn.postcheck{
+	border:none;
+	width:80px;
+	height:25px;
+	background-position:-60px -150px;
+	cursor:pointer;
+}
+div.btn_center{
+	padding-top:30px;
+	text-align:center;
+}
+div.btn_center .btn{
+	width:63px;
+	height:30px;
+}
+div.btn_center .btn.b_confirm{
+	background-position:0 -110px;
+	margin-right:10px;
+}
+div.btn_center .btn.b_cancel{
+	background-position:-100px -110px;
+}
+div.caution1 .mail{
+	padding-bottom:5px;
+	font-size:12px;
+}
+.chk_label{
+	margin-left:3px;
+ 	border:1px solid red;	
+}
