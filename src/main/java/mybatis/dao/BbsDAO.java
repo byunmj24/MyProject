@@ -54,10 +54,10 @@ public class BbsDAO {
 		map.put("ip", ip);
 		map.put("bname", bname);
 		int cnt = sst.insert("bbs.add", map);
-		if(cnt >0)
-			sst.commit();
-		else
-			sst.rollback();
+		//if(cnt >0)
+			//sst.commit();
+		//else
+			//sst.rollback();
 		
 		return;
 	}
@@ -65,10 +65,10 @@ public class BbsDAO {
 	public void add(BbsVO vo) {
 		
 		int cnt = sst.insert("bbs.add2", vo);
-		if(cnt >0)
-			sst.commit();
-		else
-			sst.rollback();
+		//if(cnt >0)
+			//sst.commit();
+		//else
+			//sst.rollback();
 		
 		return;
 	}
@@ -76,7 +76,6 @@ public class BbsDAO {
 	//보기 기능
 	public BbsVO getBbs(String b_idx) {
 		BbsVO vo = sst.selectOne("bbs.getBbs", b_idx);
-		sst.close();
 		
 		return vo;
 	}
@@ -94,10 +93,10 @@ public class BbsDAO {
 		
 		int cnt = sst.update("bbs.edit", map);
 		if(cnt > 0) {
-			sst.commit();
+			//sst.commit();
 			value = true;
 		}else {
-			sst.rollback();
+			//sst.rollback();
 		}
 		
 		return value;
@@ -106,10 +105,10 @@ public class BbsDAO {
 	//삭제 기능
 	public void delBbs(String b_idx) {
 		int cnt = sst.update("bbs.del", b_idx);
-		if(cnt > 0) {
-			sst.commit();
-		} else {
-			sst.rollback();
-		}
+		//if(cnt > 0) {
+			//sst.commit();
+		//} else {
+			//sst.rollback();
+		//}
 	}
 }

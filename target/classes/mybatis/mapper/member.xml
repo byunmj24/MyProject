@@ -13,4 +13,5 @@
 		select * from member_t where m_id = #{m_id} and m_pw = #{m_pw}
 	</select>
 	
+	
 </mapper>

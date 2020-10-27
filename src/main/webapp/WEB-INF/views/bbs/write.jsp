@@ -35,6 +35,7 @@
 		//위는 Controller로 전달하지 못하므로 의미가 없다.
 		 --%>
 		<input type="hidden" name="bname" value="BBS"/>
+		<input type="hidden" name="writer" value="${mvo.m_name }"/>
 		<table summary="게시판 글쓰기">
 			<caption>게시판 글쓰기</caption>
 			<tbody>

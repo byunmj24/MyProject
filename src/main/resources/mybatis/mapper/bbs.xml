@@ -36,8 +36,8 @@
 	</insert>
 	
 	<insert id="add2" parameterType="mybatis.vo.BbsVO">
-		insert into bbs(b_idx, subject, content, file_name, write_date, ip, hit, status, bname)
-		values(bbs_seq.nextval, #{subject}, #{content}, #{file_name}, sysdate, #{ip}, 0, 0, #{bname})
+		insert into bbs(b_idx, subject, writer, content, file_name, write_date, ip, hit, status, bname)
+		values(bbs_seq.nextval, #{subject}, #{writer}, #{content}, #{file_name}, sysdate, #{ip}, 0, 0, #{bname})
 	</insert>
 	
 	<!-- 보기 기능 : resultMap으로 하지 않으면 댓글들을 같이 못받는다. -->

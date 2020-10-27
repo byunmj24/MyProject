@@ -19,6 +19,8 @@
 		<property name="minIdle" value="${jdbc.minIdle}"/>
 	</bean>
 	
+	
+	
 	<bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds"/>
 		<property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
@@ -29,6 +31,10 @@
 		SqlSessionTemplate을 자체적으로 관리가 되므로 SqlSessionTemplate을 DAO에 넣고 사용해야 한다. -->
 	<bean id="sst" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="factory"/>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+  		<constructor-arg ref="ds" />
 	</bean>
 	
 	<!-- DAO를 계속 추가해줄거야? 아니지?
