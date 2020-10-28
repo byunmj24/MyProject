@@ -55,10 +55,26 @@
 			where b_idx = #{b_idx}
 	</update>
 	
+	<update id="edit2" parameterType="mybatis.vo.BbsVO">
+		update bbs
+			set	subject = #{subject}, content = #{content}
+			<if test="file_name != null">
+				, file_name = #{file_name}
+			</if> 
+			where b_idx = #{b_idx}
+	</update>
+	
 	<!-- 원글 삭제 -->
 	<update id="del" parameterType="String">
 		update bbs
 		set status = 1
 		where b_idx = #{b_idx}
 	</update>
-	</mapper>
+	
+	<!-- 조회수 증가 -->
+	<update id="update_hit" parameterType="String">
+		update bbs
+		set hit = hit + 1
+		where b_idx = #{b_idx}
+	</update>
+</mapper>

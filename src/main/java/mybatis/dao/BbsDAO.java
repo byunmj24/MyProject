@@ -102,6 +102,23 @@ public class BbsDAO {
 		return value;
 	}
 	
+		public boolean editBbs(BbsVO vo) {
+			boolean value = false;
+			
+			//파일첨부가 되었을 때만 파일명을 DB에 저장! 만약? 첨부된 파일이 없다면 기존 파일을 유지하자!
+			//if(vo.getFile_name() != null && vo.getFile_name().trim().length() > 0) 
+			
+			int cnt = sst.update("bbs.edit2", vo);
+			if(cnt > 0) {
+				//sst.commit();
+				value = true;
+			}else {
+				//sst.rollback();
+			}
+			
+			return value;
+		}
+	
 	//삭제 기능
 	public void delBbs(String b_idx) {
 		int cnt = sst.update("bbs.del", b_idx);
@@ -110,5 +127,15 @@ public class BbsDAO {
 		//} else {
 			//sst.rollback();
 		//}
+	}
+	
+	//조회수 변경
+	public boolean updateHit(String b_idx) {
+		int cnt = sst.update("bbs.update_hit", b_idx);
+		boolean value = false;
+		if(cnt > 0)
+			value = true;
+		
+		return value;
 	}
 }

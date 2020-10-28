@@ -17,6 +17,15 @@ public class BbsVO {
 					status,
 					bname;
 	
+	private String cPage;
+	
+	public String getcPage() {
+		return cPage;
+	}
+	public void setcPage(String cPage) {
+		this.cPage = cPage;
+	}
+	
 	private MultipartFile file;
 	
 	public MultipartFile getFile() {

@@ -14,16 +14,7 @@
 <body>
 <div id="wrap">
 	<!-- 상단 영역 -->
-	<div id="header">
-		<h1>SK Together</h1>
-		<ul class="gnb">
-			<li><a href=""><span class="menu m01">기브유</span></a></li>
-			<li><a href=""><span class="menu m02">위드유</span></a></li>
-			<li><a href=""><span class="menu m03">스마트 전통시장</span></a></li>
-			<li><a href=""><span class="menu m04">BRAVO!</span></a></li>
-			<li><a href=""><span class="menu m05">SKT와 사회공헌</span></a></li>
-		</ul>
-	</div>
+	<jsp:include page="../header.jsp"/>
 	<!-- 상단 영역 끝 -->
 	<!-- 콘텐츠 영역 -->
 	<div id="contents_sub">
@@ -57,9 +48,7 @@
 					<tr>
 						<td>${rowTotal - st.index - (blockList*(nowPage - 1)) }</td>
 						<td style="text-align: left">
-							<a href="Controller?type=view&cPage=${nowPage }&b_idx=${vo.b_idx}">
-							${vo.subject }
-						</a></td>
+							<a href="view?cPage=${nowPage }&b_idx=${vo.b_idx}">${vo.subject }</a></td>
 						<td>${vo.writer }</td>
 						<td>
 						<c:if test="${vo.write_date ne null }">
@@ -81,26 +70,7 @@
 	</div>
 	<!-- 콘텐츠 영역 끝-->
 	<!-- 하단 영역 -->
-	<div id="footer">
-		<div class="footer_area">
-			<ul class="foot_guide">
-				<li><a href="">개인정보취급방침</a></li>
-				<li><a href="">웹회원 이용약관</a></li>
-				<li><a href="">책임한계와 법적고지</a></li>
-				<li><a href="">이메일 무단수집 거부</a></li>
-			</ul>
-			<address>
-			 서울시 중구 을지로 몇가 번지
-			 대표이사: 마루치 
-			 고객상담: 국번없이 114 혹은 
-			 02-1234-1234 (평일 09:00~17:00)
-			</address> 
-			<p class="copyright">
-				Copyright (c) 2012 SK Teleccom.
-				All rights reserved.
-			</p>
-		</div>
-	</div>
+		<jsp:include page="../footer.jsp"/>
 	<!-- 하단 영역 끝 -->
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
