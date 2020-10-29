@@ -18,29 +18,30 @@
 	<!-- 상단 영역 끝 -->
 	<!-- 콘텐츠 영역 -->
 	<div id="contents_sub">
-		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">공헌쓰기</h1>
+		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">공헌편집하기</h1>
 		<div class="bbs_area" id="bbs">
-			<form action="write_ok" method="post" encType="multipart/form-data">
+			<form action="edit" method="post" encType="multipart/form-data">
 		<%--
 		<input type="hidden" name="type" value="write"/>
 		//위는 Controller로 전달하지 못하므로 의미가 없다.
 		 --%>
-		<input type="hidden" name="bname" value="BBS"/>
+		<input type="hidden" name="cPage" value="${param.cPage }"/>
+		<input type="hidden" name="b_idx" value="${sessionScope.bvo.b_idx }"/>
 		<table summary="게시판 글쓰기">
-			<caption>게시판 글쓰기</caption>
+			<caption>게시판 편집하기</caption>
 			<tbody>
 				<tr>
 					<th>제목:</th>
-					<td><input type="text" name="subject" size="45"/></td>
+					<td><input type="text" name="subject" size="45" value="${bvo.subject }"/></td>
 				</tr>
 				<tr>
 					<th>내용:</th>
 					<td><textarea name="content" cols="50" 
-							rows="8"></textarea></td>
+							rows="8" >${bvo.content }</textarea></td>
 				</tr>
 				<tr>
-					<th>첨부파일:</th>
-					<td><input type="file" name="file"/></td>
+					<th>첨부파일:<c:if test="${bvo.file_name ne null }">(${bvo.file_name })</c:if></th>
+					<td><input type="file" name="file"></td>
 				</tr>
 				<tr>
 					<td colspan="2">

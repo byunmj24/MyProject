@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import mybatis.dao.BbsDAO;
 import mybatis.vo.BbsVO;
 import mybatis.vo.MemVO;
+import spring.util.FileUploadUtil;
 
 @Controller
 public class WriteController {
@@ -87,7 +88,8 @@ public class WriteController {
 			//파일명 얻기
 			String f_name = mf.getOriginalFilename();
 			
-			//동일한 파일명이 있다면 변경해야 한다.(내일 한단다...안하기만 해봐라...)
+			//동일한 파일명이 있다면 변경해야 한다.(내일 한단다...안하기만 해봐라...>> 오늘 했다.)
+			f_name = FileUploadUtil.checkSameFileName(f_name, path);
 			
 			//업로드
 			mf.transferTo(new File(path, f_name));
@@ -98,13 +100,14 @@ public class WriteController {
 		
 		vo.setIp(request.getRemoteAddr());// ip저장!
 		
-		b_dao.add(vo);
-		
 		//로그인 한 정보를 얻어낸다.
 		MemVO mvo = (MemVO) session.getAttribute("mvo");
 		vo.setWriter(mvo.getM_name());
 		
+		b_dao.add(vo);
+		
 		//bbs로 가면 값들을 다 저장해서 bbs/list로 간다. 이때만큼은 redirect로 가야한다!!
+		//목록으로 가서 begin, end등 다시 Paging 수행, 지금까지 한 건 다 버리고 redirect로
 		mv.setViewName("redirect:/bbs");
 		
 		return mv;
