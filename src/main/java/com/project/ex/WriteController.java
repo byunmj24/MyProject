@@ -107,6 +107,7 @@ public class WriteController {
 		b_dao.add(vo);
 		
 		//bbs로 가면 값들을 다 저장해서 bbs/list로 간다. 이때만큼은 redirect로 가야한다!!
+		//목록으로 가서 begin, end등 다시 Paging 수행, 지금까지 한 건 다 버리고 redirect로
 		mv.setViewName("redirect:/bbs");
 		
 		return mv;

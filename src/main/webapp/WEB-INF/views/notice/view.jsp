@@ -98,15 +98,6 @@
 		document.frm.action = "edit";
 		document.frm.submit();
 	}
-	function fDown(fname){
-		//FileDownload라는 서블릿 호출!
-		location.href="FileDownload?dir=/resources/upload&filename="+encodeURIComponent(fname);
-		
-		//get방식 한글처리를 하기 위해서는 톰캣의 server.xml에서
-		//<Connector port="8080" protocol="HTTP/1.1" ..../>에 URIEncoding="UTF-8" 추가
-		//<Connector port="8009" protocol="AJP/1.3" .... />에 URIEncoding="UTF-8" 추가
-		//인코딩해서 보내고 디코딩해서 받는 방법도 있음
-	}
 </script>
 </body>
 </html>
