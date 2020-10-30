@@ -66,7 +66,7 @@ public class FileDownload extends HttpServlet {
 			int size = -1;
 			try {
 				//읽어서 보내기
-				while((size = bis.read(buf)) != -1) {//더 이상 파일로부터 읽을 것이 없을떄까지 반복
+				while((size = bis.read(buf)) != -1) {//더 이상 파일로부터 읽을 것이 없을때까지 반복
 					bos.write(buf, 0, size);//읽은 만큼 쓰기한다.
 					bos.flush();
 				}
