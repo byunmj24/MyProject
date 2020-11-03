@@ -40,4 +40,14 @@
 	
 	<context:component-scan base-package="com.project.ex" />
 	
+	<beans:bean id="log_in" class="spring.interceptor.LoginInterceptor"></beans:bean>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/bbs/*"/>
+			<mapping path="/tour/*"/>
+			<beans:ref bean="log_in"/>
+		</interceptor>
+	</interceptors>
+	
 </beans:beans>
