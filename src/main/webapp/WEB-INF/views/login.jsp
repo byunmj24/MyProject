@@ -5,15 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link type="text/css" rel="stylesheet" 
-href="css/common.css"/>
-<link type="text/css" rel="stylesheet" 
-href="css/login.css"/>
+<link type="text/css" rel="stylesheet" href="css/common.css"/>
+<link type="text/css" rel="stylesheet" href="css/login.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 <body>
 <div id="wrap">
 	<!-- 상단 영역 -->
-	<jsp:include page="header.jsp"/>
+	<jsp:include page="header2.jsp"/>
 	<!-- 상단 영역 끝 -->
 	<!-- 콘텐츠 영역 -->
 	<div id="contents_sub">
@@ -56,42 +55,36 @@ href="css/login.css"/>
 		<!-- 일반개인회원 끝-->
 		<!-- 기관단체회원 -->
 			<div class="group_login">
-				<h2 class="sub_title title02">일반 개인회원</h2>
+				<h2>소셜 로그인</h2>
 				<div class="login">
 				  <form action="" method="post">
-					<div class="input_area">
-						<p>
-						 <label for="s_id">아이디</label>
-						 <input type="text" name="id" id="s_id"/>
-						</p>
-						<p>
-						 <label for="s_pw">비밀번호</label>
-						 <input type="password" name="pw" id="s_pw"/>
-						</p>
+					<div>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<a href="https://kauth.kakao.com/oauth/authorize?client_id=62760ebf9274fa8626834c26cc29f7b8&redirect_uri=http://localhost:8080/kakao_login&response_type=code">
+										<img src="img/kakao_login.png"/>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<a href=""><img src="img/naver_login.png" width="185px" style="margin:5px 0px"/></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<a href=""><img src="img/google_login2.png"/></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-					<div class="btnArea_right">
-						<span class="btn b_login">
-						 <a href="">로그인</a>
-						</span>
-					</div>
-					<div class="fclear"></div>
-					<p class="login_search">
-						<input type="checkbox" name="chk" 
-						 id="ch01"/><label for="ch01">
-						 아이디저장</label>
-						<span class="btn b_search">
-						  <a href="">아이디/비밀번호찾기</a>
-						</span>
-					</p>
 				  </form>						
 				</div>
 			</div>
 		<!-- 기관단체회원 끝-->
-		</div>
-		<div>
-			<a href="https://kauth.kakao.com/oauth/authorize?client_id=62760ebf9274fa8626834c26cc29f7b8&redirect_uri=http://localhost:8080/kakao_login&response_type=code">
-			<img src="img/kakao_login.png"/>
-			</a>
 		</div>
 	</div>
 	<!-- 콘텐츠 영역 끝-->

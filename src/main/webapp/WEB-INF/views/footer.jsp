@@ -9,14 +9,12 @@
 			<li><a href="">이메일 무단수집 거부</a></li>
 		</ul>
 		<address>
-		 서울시 중구 을지로 몇가 번지
-		 대표이사: 마루치 
-		 고객상담: 국번없이 114 혹은 
-		 02-1234-1234 (평일 09:00~17:00)
-		</address> 
+			서울특별시 관악구 취업길로 100
+			대표이사 : 변민종 |
+			고객상담 : 국번없이 112 혹은 02-1234-5678(평일 09:30~17:00)
+		</address>
 		<p class="copyright">
-			Copyright (c) 2012 SK Teleccom.
-			All rights reserved.
+			COPYRIGHT (c) 2020 SK Telecom. All rights reserved
 		</p>
 	</div>
 </div>

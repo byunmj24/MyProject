@@ -10,35 +10,12 @@
 <!-- 외부CSS파일 연결 -->
 <link type="text/css" rel="stylesheet" href="css/common.css"/>
 <link type="text/css" rel="stylesheet" href="css/main.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 <body>
 	<div id="wrap">
 		<!-- 상단 영역 -->
-		<div id="header">
-			<div class="txt_right">
-			<%--
-				Object obj = request.getAttribute("login_chk");
-				boolean chk = (boolean)obj;
-				if(!chk){
-			--%>
-			<c:if test="${sessionScope.mvo eq null }">
-				<span><a href="login">로그인</a></span>
-			</c:if>
-			<c:if test="${sessionScope.mvo ne null }">
-				<%--<span><a href="javascript:location.href='logout'">로그아웃</a></span> --%>
-				<span><a href="javascript:logout()">로그아웃</a></span>
-			</c:if>
-			</div>
-			<h1>SK Together</h1>
-			<ul class="gnb">		 <!-- class 다중 적용 -->
-				<li><a href=""><span class="menu m01">기브유</span></a></li>
-				<li><a href="/goData"><span class="menu m02">위드유</span></a></li>
-				<li><a href="shop"><span class="menu m03">스마트 전통시장</span></a></li>
-				<li><a href="notice"><span class="menu m04">BRAVO!</span></a></li>
-				<li><a href="bbs"><span class="menu m05">SKT와 사회공헌</span></a></li>
-				<li class="end"></li>
-			</ul>
-		</div>
+		<jsp:include page="header2.jsp"/>
 		<!-- 상단 영역 끝 -->
 		<!-- 컨텐츠 영역 -->
 		<div id="contents">
@@ -150,24 +127,7 @@
 		</div>
 		<!-- 컨텐츠 영역 끝 -->
 		<!-- 하단영역 -->
-		<div id="footer">
-			<div class="footer_area">
-				<ul class="foot_guide">
-					<li><a href="">개인정보취급방침</a></li>
-					<li><a href="">웹회원 이용약관</a></li>
-					<li><a href="">책임한계와 법적고지</a></li>
-					<li><a href="">이메일 무단수집 거부</a></li>
-				</ul>
-				<address>
-					서울특별시 관악구 취업길로 100
-					대표이사 : 변민종 |
-					고객상담 : 국번없이 112 혹은 02-1234-5678(평일 09:30~17:00)
-				</address>
-				<p class="copyright">
-					COPYRIGHT (c) 2020 SK Telecom. All rights reserved
-				</p>
-			</div>
-		</div>
+		<jsp:include page="footer.jsp"/>
 		<!-- 하단영역 끝 -->
 	</div>
 	

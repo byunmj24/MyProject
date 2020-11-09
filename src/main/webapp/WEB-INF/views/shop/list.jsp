@@ -10,45 +10,55 @@
 <link type="text/css" rel="stylesheet" href="css/common.css"/>
 <link type="text/css" rel="stylesheet" href="css/login.css"/>
 <link type="text/css" rel="stylesheet" href="css/bbs.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 <body>
 <div id="wrap">
 	<!-- 상단 영역 -->
-	<jsp:include page="../header.jsp"/>
+	<jsp:include page="../header2.jsp"/>
 	<!-- 상단 영역 끝 -->
 	<!-- 콘텐츠 영역 -->
 	<div id="contents_sub">
-		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">스마트 전통시장</h1>
-		<div class="bbs_area" id="bbs">
-			<table summary="게시판 목록">
+		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">MARKET</h1>
+		<div>
+			<table  class="table table-hover" summary="게시판 목록">
 				<caption>상품 목록</caption>
+				<colgroup>
+					<col width="10%"/>
+					<col width="15%"/>
+					<col width="35%"/>
+					<col width="10%"/>
+					<col width="20%"/>
+					<col width="10%"/>
+				</colgroup>
 				<thead>
-					<tr class="title">
-						<th class="no">번호</th>
-						<th class="subject">제목</th>
-						<th class="writer">글쓴이</th>
-						<th class="reg">날짜</th>
-						<th class="hit">조회수</th>
+					<tr class="table-primary">
+						<th scope="col"><p class="text-primary">번호</p></th>
+						<th scope="col"><p class="text-primary">미리보기</p></th>
+						<th scope="col"><p class="text-primary">제목</p></th>
+						<th scope="col"><p class="text-primary">글쓴이</p></th>
+						<th scope="col"><p class="text-primary">날짜</p></th>
+						<th scope="col"><p class="text-primary">조회수</p></th>
 					</tr>
 				</thead>
 				
 				<tfoot>
 	                      <tr>
-	                          <td colspan="4">
+	                          <td colspan="5">
 	                             ${requestScope.p_code }
 	                          </td>
 							  <td>
-								<input type="button" value="글쓰기" id="write_btn"/>
+								<input type="button" value="글쓰기" class="btn btn-primary"/>
 							  </td>
 	                      </tr>
 	                  </tfoot>
 				<tbody>
 				<c:if test="${ar ne null }">
 						<c:forEach var="vo" items="${requestScope.ar }" varStatus="st">
-					<tr>
+					<tr class="table-default">
 						<td>${rowTotal - st.index - (blockList*(nowPage - 1)) }</td>
-						<td style="text-align: left">
-							<a href="shopView?cPage=${nowPage }&b_idx=${vo.b_idx}"><img src="upload/${vo.file_name }" height=20px > ${vo.subject }</a></td>
+						<td><img src="upload/${vo.file_name }" height=20px ></td>
+						<td style="text-align: left"><a href="shopView?cPage=${nowPage }&b_idx=${vo.b_idx}">${vo.subject }</a></td>
 						<td>${vo.writer }</td>
 						<td>
 						<c:if test="${vo.write_date ne null }">
@@ -61,7 +71,7 @@
 				</c:if>
 				<c:if test="${ar eq null }">
 					<tr>
-						<td colspan="5" class="empty">등록된 게시물이 없습니다.</td>
+						<td colspan="6" class="empty">등록된 게시물이 없습니다.</td>
 					</tr>
 				</c:if>
 				</tbody>

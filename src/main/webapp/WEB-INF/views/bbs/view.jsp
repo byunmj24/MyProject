@@ -10,19 +10,20 @@
 <link type="text/css" rel="stylesheet" href="css/common.css"/>
 <link type="text/css" rel="stylesheet" href="css/login.css"/>
 <link type="text/css" rel="stylesheet" href="css/bbs.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 <body>
 <div id="wrap">
 	<!-- 상단 영역 -->
-	<jsp:include page="../header.jsp"/>
+	<jsp:include page="../header2.jsp"/>
 	<!-- 상단 영역 끝 -->
 	<!-- 콘텐츠 영역 -->
 	<div id="contents_sub">
-		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">SKT와 사회공헌</h1>
+		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">BOARD VIEW</h1>
 		<div class="bbs_area" id="bbs">
 			<form method="post" name="frm">
 				<input type="hidden" name="cPage" value="${param.cPage }"/>
-				<table summary="게시판 글쓰기">
+				<table summary="게시판 글쓰기" style="margin-left:auto; margin-right:auto">
 					<caption>게시판 글쓰기</caption>
 					<tbody>
 						<tr>
@@ -63,6 +64,7 @@
 					</tbody>
 				</table>
 		</form>
+			<div style="margin:0 auto;">
 			<form method="post" action="ans_write.jsp">
 				이름:<input type="text" name="writer"/><br/>
 				내용:<textarea rows="4" cols="55" name="comm"></textarea><br/>
@@ -83,6 +85,7 @@
 				</div>
 			</c:forEach>
 				</div>
+			</div>
 			</div>
 			<!-- 콘텐츠 영역 끝-->
 	<!-- 하단 영역 -->
