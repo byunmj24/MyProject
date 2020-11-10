@@ -10,11 +10,12 @@
 <link type="text/css" rel="stylesheet" href="css/common.css"/>
 <link type="text/css" rel="stylesheet" href="css/login.css"/>
 <link type="text/css" rel="stylesheet" href="css/bbs.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 <body>
 <div id="wrap">
 	<!-- 상단 영역 -->
-	<jsp:include page="../header.jsp"/>
+	<jsp:include page="../header2.jsp"/>
 	<!-- 상단 영역 끝 -->
 	<!-- 콘텐츠 영역 -->
 	<div id="contents_sub">

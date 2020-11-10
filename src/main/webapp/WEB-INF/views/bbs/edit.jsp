@@ -10,15 +10,16 @@
 <link type="text/css" rel="stylesheet" href="css/common.css"/>
 <link type="text/css" rel="stylesheet" href="css/login.css"/>
 <link type="text/css" rel="stylesheet" href="css/bbs.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 <body>
 <div id="wrap">
 	<!-- 상단 영역 -->
-	<jsp:include page="../header.jsp"/>
+	<jsp:include page="../header2.jsp"/>
 	<!-- 상단 영역 끝 -->
 	<!-- 콘텐츠 영역 -->
 	<div id="contents_sub">
-		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">공헌편집하기</h1>
+		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">BOARD EDIT</h1>
 		<div class="bbs_area" id="bbs">
 			<form action="edit" method="post" encType="multipart/form-data">
 		<%--
@@ -27,7 +28,7 @@
 		 --%>
 		<input type="hidden" name="cPage" value="${param.cPage }"/>
 		<input type="hidden" name="b_idx" value="${sessionScope.bvo.b_idx }"/>
-		<table summary="게시판 글쓰기">
+		<table summary="게시판 글쓰기" style="margin-left:auto; margin-right:auto">
 			<caption>게시판 편집하기</caption>
 			<tbody>
 				<tr>

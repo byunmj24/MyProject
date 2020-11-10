@@ -10,25 +10,33 @@
 <link type="text/css" rel="stylesheet" href="css/common.css"/>
 <link type="text/css" rel="stylesheet" href="css/login.css"/>
 <link type="text/css" rel="stylesheet" href="css/goData.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 <body>
 <div id="wrap">
 	<!-- 상단 영역 -->
-	<jsp:include page="../header.jsp"/>
+	<jsp:include page="../header2.jsp"/>
 	<!-- 상단 영역 끝 -->
 	<!-- 콘텐츠 영역 -->
 	<div id="contents_sub">
-		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">위드유</h1>
-		<div class="bbs_area" id="bbs">
-			<table summary="게시판 목록">
+		<h1 style="font-size: 30px; color: #000; margin-bottom: 20px;">WITHJAVA</h1>
+		<div>
+			<table  class="table table-hover" summary="게시판 목록">
 				<caption>게시판 목록</caption>
+				<colgroup>
+					<col width="20%"/>
+					<col width="30%"/>
+					<col width="20%"/>
+					<col width="15%"/>
+					<col width="15%"/>
+				</colgroup>
 				<thead>
-					<tr class="title">
-						<th class="no">이미지</th>
-						<th class="subject">제목</th>
-						<th class="writer">위치</th>
-						<th class="reg">날짜</th>
-						<th class="hit">전화번호</th>
+					<tr class="table-primary">
+						<th scope="col"><p class="text-primary">이미지</p></th>
+						<th scope="col"><p class="text-primary">제목</p></th>
+						<th scope="col"><p class="text-primary">위치</p></th>
+						<th scope="col"><p class="text-primary">날짜</p></th>
+						<th scope="col"><p class="text-primary">전화번호</p></th>
 					</tr>
 				</thead>
 				
@@ -36,7 +44,7 @@
 				<tbody>
 				<c:if test="${list ne null }">
 						<c:forEach var="vo" items="${requestScope.list }" varStatus="st">
-					<tr>
+					<tr class="table-default">
 						<td>
 							<img src="${vo.firstimage }" width="65px"/>
 						</td>
